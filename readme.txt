@@ -40,3 +40,12 @@ JAVA程序存储数据：
                             数据库实例名
                             身份：normal
                                 文件-新建-命令窗口
+    SQL:结构化的查询语言
+        select  name1,name2 from Table
+        语法：
+            select    from
+                select:指定查看属性  from:指定属性所属表(Table)
+                1.查看部分列 seclect name1,name2,.. from Table
+                2.查看所有列 select from Table;/select * from Table
+                3.对列的数据进行运算 select name1,name2,salary*12 from Table
+                4.查询列名 更改
