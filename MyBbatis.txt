@@ -1,0 +1,42 @@
+MyBatis
+一、基于java的持久层框架，主要用于数据库的访问操作
+    1.JDBC的数据访问操作缺点
+        1)代码冗余大，开发效率低下
+        2）sql命令定义在java里程序中，如需改变，必重新编译
+        3）所有O-R mapping的动作都需要手动完成
+    2.MyBatis框架
+        框架：对现有代码的合理封装，便于调用。提高开发效率
+二、MyBaits体系结构
+    1.提供了一个映射文件 ---mapper文件(MyBaits提出功能要求)
+    interface AccountDao{
+        public void insertAccount(Account a)
+    }
+    ---jdbc
+    public class AccountDaoImpl implements AccountDao{
+        Connection conn = null;
+        PreparedStatement pstm = null;
+        try{
+            conn = jdbctil.getConnection();
+            String sql = "insert into account values(...)"
+            pstm = conn.prepareStatement(sql);
+            pstm = setXXX();
+            pstm = executeUpdate();
+        }catch(Exception e){
+            .....
+        }finally{
+            jdbcUtil.close(null,pstm,null);
+        }
+    }
+    ----MyBaits ---通过mapper文件完成功能，文件后缀为xml
+    <mapper namespace="包名.AccountDao">
+        <insert id="insertAccount">   -->id：所要实现的方法名
+            insert into account values(....)
+        </insert>
+        <insert id="方法2">
+            selcet into account values(....)
+        </insert>
+    </mapper>
+    2.MyBaits根据给定的mapper文件自动生成java实现类
+三、搭建MyBaits 开发环境
+    1.引入MyBaits 需要的jar包   MyBaits3.2.2.jar  ojdbc5.jar log4j-1.2.17.jar(打印日志) 
+    2.为MyBaits提供配置文件   MyBaits`
