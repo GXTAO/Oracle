@@ -49,3 +49,14 @@ JAVA程序存储数据：
                 2.查看所有列 select from Table;/select * from Table
                 3.对列的数据进行运算 select name1,name2,salary*12 from Table
                 4.查询列名 更改
+       排序
+            1)多列排序
+                select name1,name2 from Table order by name1,name3 desc;
+            2)单列查询
+                select name1,name2 from Table order by name1 desc;
+       条件查询
+            select 列1，列2 from Table where 过滤条件 order by 列 asc|desc;
+            1)等值判断(=1000)
+                select name1,name2 from Table where name3=1000;
+            2)多条件
+                select name1,name2 from Table where name1=1000 and name2*...;
