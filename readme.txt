@@ -60,3 +60,22 @@ JAVA程序存储数据：
                 select name1,name2 from Table where name3=1000;
             2)多条件
                 select name1,name2 from Table where name1=1000 and name2*...;
+            3)不等值查询
+                select  name from Table where name<=1000 and name2>1000;
+            4)区间查询between and
+                select name between 5000 and 1000;
+            5)空值处理
+                select name from Table where name is null;
+            6)枚举查询
+                select * from Table where name1=** or name2=**;
+                select * from Table where name1 in (**~**);
+            NOTE:二者效率差别
+           *7)模糊查询(查询名字是以K开头的员工):通配符 _:任一个、%:任多个
+                select name1 from Table where name like 'K%'/'K___';(name's
+                length)
+       函数
+            sysdate 系统时间(Y-M-D H-M-D weekend)
+            dual:虚表  用于维护sql语句的完整
+            select sysdate from dual;
+
+                
